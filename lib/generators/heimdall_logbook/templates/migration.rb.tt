@@ -1,0 +1,34 @@
+class <%= migration_class_name %> < ActiveRecord::Migration<%= migration_version %>
+  def change
+    create_table :heimdall_logbook_request do |t|
+      t.string    :request_method
+      t.string    :params
+      t.string    :ip
+      t.string    :original_url
+      t.string    :remote_ip
+      t.string    :uuid
+      t.string    :authorization
+      t.string    :format
+      t.string    :headers
+      t.string    :port  
+      t.string    :protocol
+      t.string    :query_string
+      t.string    :domain
+      t.string    :host
+      t.datetime  :requested_at
+    end
+
+    create_table :heimdall_logbook_response do |t|
+      t.string    :body
+      t.string    :response_code
+      t.string    :headers
+      t.string    :content_type
+      t.string    :status
+      t.string    :location
+      t.string    :message
+      t.string    :charset
+      t.string    :status
+      t.datetime  :responded_at
+    end
+  end
+end
